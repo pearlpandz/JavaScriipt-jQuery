@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>			
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<title>checking</title>
+		
+		
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">		
+		<style type="text/css">
+			li.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+							<ul id="main_menu" class="nav navbar-nav">
+								<li><a href="javascript:void(0)">Home</a></li>
+								<li class="dropdown123">
+									<a href="javascript:void(0)" >Career</a> 	
+									<ul class="dropdown-sub">											
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+									</ul>
+								</li>
+								<li><a href="">About us</a></li>
+								<li class="dropdown">
+									<a href="javascript:void(0)">Store locator</a>
+									<ul class="dropdown-sub">											
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+										<li><a>safgdsfasf</a></li>
+									</ul>
+								</li>
+								<li><a href=""> Contact us</a></li>
+							</ul>
+						</div><!-- navbar-collapse -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+			$(document).ready( function(){
+				$('.dropdown-sub').hide();
+				$('#main_menu').find('> li').click(function() {					
+					$('ul li.active').removeClass('active');
+    				$(this).closest('li').addClass('active');
+				    $('#main_menu > li').not(this).find('ul').slideUp();
+				    $(this).find('ul').stop(true, true).slideToggle(400);
+				    return false;
+				});
+				$(document).click(function(){
+					$('.dropdown-sub').slideUp();						
+				});			
+			});
+	</script>
+	</body>
+</html>
