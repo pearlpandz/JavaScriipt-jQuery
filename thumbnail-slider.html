@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta content="charset=utf-8">
+  <title>FlexSlider 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <!-- style included -->
+  <style type="text/css">
+  /*flexslider*/
+  ul.flex-direction-nav {
+    display: none;
+  }
+</style>
+</head>
+<body class="loading">
+  <div id="custom_thumbnail_slider">
+    <div id="carousel" class="flexslider">
+      <ul class="slides">
+        <li>
+          section 1
+        </li>
+        <li>
+          section 2
+        </li>
+        <li>
+          section 3
+        </li>
+      </ul>
+    </div>
+    <div id="slider" class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="https://assets.servedby-buysellads.com/p/manage/asset/id/38523" />
+        </li>
+        <li>
+          <img src="https://assets.servedby-buysellads.com/p/manage/asset/id/38523" />
+        </li>
+        <li>
+          <img src="https://assets.servedby-buysellads.com/p/manage/asset/id/38523" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+  <!-- FlexSlider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
+  <script type="text/javascript">
+    jQuery(function(){
+      SyntaxHighlighter.all();
+    });
+    jQuery(window).load(function(){
+      jQuery('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+
+      jQuery('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel",
+        start: function(slider){
+          jQuery('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
